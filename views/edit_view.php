@@ -23,7 +23,7 @@
       </ul>
       <?php endif; ?>
       <div class="row mt-2">
-        <form class="col-sm-12" action="store_users.php" method="POST">
+        <form class="col-sm-12" action="update_users.php" method="POST">
           <input type="hidden" name="_token" value="<?= $token ?>">
           <input type="hidden" name="id" value="<?= $id ?>">
           <!-- 1行 -->
@@ -37,17 +37,17 @@
           <div class="form-group row">
             <label class="col-2 col-form-label">年齢</label>
             <div class="col-10">
-              <input type="text" name="gender" class="form-control" name="age" value="<?= $user->age ?>">
+              <input type="text" class="form-control" name="age" value="<?= $user->age ?>">
             </div>
           </div>
           <!-- 1行 -->
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">性別</label>
             <div class="col-10 mb-5">
-              <input type="radio" class="form-control" name="gender" value="<?=$user->gender ?>" 
+              <input type="radio" class="form-control" name="gender" value="male" 
               <?php $user->gender ==="" || $user->gender==="male" ? print "checked" :print""; ?>>男性 
-              <input type="radio" class="form-control" name="gender" value="<?=$user->gender ?>" 
-              <?php $user->gender ==="" || $user->gender==="female"?print "checked" :print ""; ?>>女性 
+              <input type="radio" class="form-control" name="gender" value="female" 
+              <?php $user->gender ==="" || $user->gender==="female" ? print "checked" : print ""; ?>>女性 
             </div>
           </div>
           <!-- 1行 -->
